@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { Tab5PageRoutingModule } from './tab5-routing.module';
 
 import { Tab5Page } from './tab5.page';
+import { ComponentesModule } from 'src/app/shared/componentes.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    Tab5PageRoutingModule
+    Tab5PageRoutingModule,
+    ComponentesModule
   ],
   declarations: [Tab5Page]
 })
