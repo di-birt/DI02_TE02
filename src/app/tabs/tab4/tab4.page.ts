@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class Tab4Page implements OnInit {
 
   adivina: number;
-  numero!: number;
+  numero!: string;
   acierto: boolean;
   mensaje: string;
   desactivado: boolean;
@@ -17,6 +17,15 @@ export class Tab4Page implements OnInit {
   constructor() {
     this.adivina = 0;
     //this.numero = 0;
+    this.acierto = false;
+    this.mensaje = "";
+    this.desactivado = true;
+    this.intentos = 0;
+   }
+
+   resetearValores(){
+    this.adivina = 0;
+    this.numero = "";
     this.acierto = false;
     this.mensaje = "";
     this.desactivado = true;
@@ -37,15 +46,15 @@ export class Tab4Page implements OnInit {
 
   btnComprobarPulsado() {
     this.intentos++;
-    if(this.numero == this.adivina){
+    if(Number(this.numero) == this.adivina){
       this.acierto = true;
       console.log("Has acertado");
       this.mensaje = "Has acertado!!"
-    } else if(this.numero < this.adivina){
+    } else if(Number(this.numero) < this.adivina){
       this.acierto = false;
       console.log("El número secreto es mayor");
       this.mensaje="El número secreto es mayor";
-    } else if(this.numero > this.adivina){
+    } else if(Number(this.numero) > this.adivina){
       this.acierto = false;
       console.log("El número secreto es menor");
       this.mensaje="El número secreto es menor";
@@ -53,7 +62,7 @@ export class Tab4Page implements OnInit {
   }
 
   comprobarNumero(){
-    if (this.numero > 100 || this.numero < 0 || this.numero == undefined) {
+    if (Number(this.numero) > 100 || Number(this.numero) < 0 || this.numero == "") {
       console.log("Introduce un número entre 0 y 100");
       this.mensaje = "Introduce un número entre 0 y 100";
       this.desactivado = true;
@@ -77,6 +86,7 @@ export class Tab4Page implements OnInit {
       role: 'confirm',
       handler: () => {
         console.log("Juego Nuevo");
+        this.resetearValores();
         this.nuevoNumero();
       },
     },

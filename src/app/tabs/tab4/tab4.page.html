@@ -21,13 +21,14 @@
       <ion-label *ngIf="acierto" color="success">{{mensaje}}</ion-label>
       <ion-label color="primary" mode="ios">{{intentos}}</ion-label>
     </ion-item>
-    <ion-item>
-      <ion-label *ngIf="acierto">
+    <div *ngIf="acierto">
+      <!--<ion-label *ngIf="acierto">-->
         <ion-button id="present-alert">¿Quieres volver a jugar?</ion-button>
         <ion-alert trigger="present-alert" header="¿Nuevo juego?" [buttons]="newGameButton"></ion-alert>
-      </ion-label>
-    </ion-item>
+      <!--</ion-label>-->
+    </div>
   </ion-list>
 
   <!--<app-explore-container name="Tab 4"></app-explore-container>-->
 </ion-content>
+
