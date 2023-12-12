@@ -11,4 +11,4 @@ import { ExploreContainerComponent } from './explore-container.component';
   declarations: [ExploreContainerComponent],
   exports: [ExploreContainerComponent]
 })
-export class ExploreContainerComponentModule {}
+ class ExploreContainerComponentModule {}
