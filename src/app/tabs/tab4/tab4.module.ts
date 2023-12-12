@@ -1,3 +1,4 @@
+import { ComponentesModule } from './../../shared/componentes.module';
 import { IonicModule } from '@ionic/angular';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -5,7 +6,7 @@ import { FormsModule } from '@angular/forms';
 
 import { Tab4Page } from './tab4.page';
 import { Tab4PageRoutingModule } from './tab4-routing.module';
-import { ComponentesModule } from 'src/app/shared/componentes.module';
+
 
 @NgModule({
   imports: [

@@ -11,7 +11,6 @@ import { ExploreContainerComponent } from './explore-container/explore-container
   //Declaramos todos los componentes que están dentro de este módulo
   declarations: [HeaderTabComponent, ExploreContainerComponent],
   imports: [
-    CommonModule,
     IonicModule
   ],
   //Declaramos los componentes que queremos exportar para que otros módulos los puedan utilizar

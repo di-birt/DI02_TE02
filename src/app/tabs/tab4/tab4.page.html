@@ -1,12 +1,6 @@
 <app-header-tab titulo="Página 4"></app-header-tab>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">tab4</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
   <ion-list>
     <ion-list-header>
       <ion-label>Adivina un número de 0 a 100</ion-label>
@@ -22,10 +16,8 @@
       <ion-label color="primary" mode="ios">{{intentos}}</ion-label>
     </ion-item>
     <div *ngIf="acierto">
-      <!--<ion-label *ngIf="acierto">-->
         <ion-button id="present-alert">¿Quieres volver a jugar?</ion-button>
         <ion-alert trigger="present-alert" header="¿Nuevo juego?" [buttons]="newGameButton"></ion-alert>
-      <!--</ion-label>-->
     </div>
   </ion-list>
 

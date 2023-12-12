@@ -8,11 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class Tab4Page implements OnInit {
 
   adivina: number;
-  numero!: string;
+  numero?: number;
   acierto: boolean;
   mensaje: string;
   desactivado: boolean;
-  intentos: number; 
+  intentos: number;
 
   constructor() {
     this.adivina = 0;
@@ -25,7 +25,7 @@ export class Tab4Page implements OnInit {
 
    resetearValores(){
     this.adivina = 0;
-    this.numero = "";
+    this.numero= undefined;
     this.acierto = false;
     this.mensaje = "";
     this.desactivado = true;
@@ -58,11 +58,11 @@ export class Tab4Page implements OnInit {
       this.acierto = false;
       console.log("El número secreto es menor");
       this.mensaje="El número secreto es menor";
-    }    
+    }
   }
 
   comprobarNumero(){
-    if (Number(this.numero) > 100 || Number(this.numero) < 0 || this.numero == "") {
+    if (Number(this.numero) > 100 || Number(this.numero) < 0) {
       console.log("Introduce un número entre 0 y 100");
       this.mensaje = "Introduce un número entre 0 y 100";
       this.desactivado = true;
