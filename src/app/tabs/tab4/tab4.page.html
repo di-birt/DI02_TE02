@@ -11,9 +11,11 @@
       <ion-input type="Number" placeholder="Introduzca un número" [(ngModel)]="numero" (ionChange)="comprobarNumero()"></ion-input>
     </ion-item>
     <ion-item>
+      <ion-label color="primary" mode="ios">Intentos: {{intentos}}</ion-label>
+    </ion-item>
+    <ion-item>
       <ion-label *ngIf="!acierto" color="danger">{{mensaje}}</ion-label>
-      <ion-label *ngIf="acierto" color="success">{{mensaje}}</ion-label>
-      <ion-label color="primary" mode="ios">{{intentos}}</ion-label>
+      <ion-label *ngIf="acierto" color="success">{{mensaje}}</ion-label>      
     </ion-item>
     <div *ngIf="acierto">
         <ion-button id="present-alert">¿Quieres volver a jugar?</ion-button>
